@@ -11,7 +11,6 @@ int main(int argc, char** argv) {
 		cout << "Podaj liczbe numer " << (i + 1) << ": ";
 		cin >> array[i];
 		sumOfElements += array[i];
-		cout << sumOfElements;
 	}
 	
 	cout << "Teraz wyswietlimy wszystkie elementy..." << endl;
