@@ -11,7 +11,12 @@
 
     <script>
         const loginButton = document.querySelector('#loginButton');
-        loginButton.addEventListener('click', e => e.target.textContent = 'Zalogowano!')
+        let loggedIn = false;
+        
+        loginButton.addEventListener('click', e => {
+            loggedIn = !loggedIn;
+            e.target.textContent = loggedIn ? 'Wyloguj się' : 'Zaloguj się!'; 
+        })
     </script>
 </body>
 </html>
