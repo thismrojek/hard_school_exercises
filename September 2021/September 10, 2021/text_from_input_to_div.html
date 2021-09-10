@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text from input to div element</title>
+    <style>
+        #exampleElement {
+            border: 1px solid gray;
+            border-radius: .25rem;
+            width: fit-content;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="exampleElement">
+        
+    </div>
+
+    <form id="exampleForm">
+        <label for="textInput">Podaj jakikolwiek tekst...</label>
+        <input id="textInput" name="textInput">
+        <input type="submit" value="Wyślij">
+    </form>
+
+    <script>
+        const exampleForm = document.querySelector('#exampleForm');
+        const previewElement = document.querySelector('#exampleElement');
+        exampleForm.addEventListener('submit', e => {
+            e.preventDefault();
+            const formData = new FormData(exampleForm);
+            const textValue = formData.get('textInput');
+            previewElement.textContent = textValue;
+        })
+    </script>
+</body>
+</html>
