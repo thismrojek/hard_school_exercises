@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changes to elements in mouse events</title>
+    <style>
+        main {
+            display: flex;
+        }
+
+        .blockElement {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            width: 200px;
+            height: 200px;
+            margin: 1rem;
+            background: gray;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="blockElement">
+            Jestem testowym elementem 1
+        </div>
+        <div class="blockElement">
+            Jestem testowym elementem 2
+        </div>
+        <div class="blockElement">
+            Jestem testowym elementem 3
+        </div>
+    </main>
+    
+    <script>
+        const blockElements = document.querySelectorAll('.blockElement');
+        blockElements.forEach(element => {
+            element.addEventListener('click', e => {
+                e.target.textContent = 'Kliknięto  w ten element!';
+            })
+            element.addEventListener('mouseover', e => {
+                e.target.style.background = 'red';
+            })
+            element.addEventListener('mouseout', e => {
+                e.target.style.background = 'violet';
+            })
+        })
+    </script>
+</body>
+</html>
