@@ -74,5 +74,14 @@ int main(int argc, char** argv) {
 	}
 	cout << endl << "Suma wartosci elementow, ktorych indeksy sa podzielne przez 3 lub 5 wynosi: " << sumOfDivisibleBy3And5;
 	
+	// zadanie na 6
+	int lowAmplitudesCount = 0;
+	for (int i = 0; i < 14; i++) {
+		if ((array[i] == array[i + 1] - 1) || (array[i] == array[i + 1] + 1)) {
+			lowAmplitudesCount++;
+		}
+	}
+	cout << endl << "Liczba niskich amplitud: " << lowAmplitudesCount;
+	
 	return 0;
 }
