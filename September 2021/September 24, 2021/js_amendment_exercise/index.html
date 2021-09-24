@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>amendment exercise</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <div class="square light"></div>
+        <div class="square"></div>
+        <div class="square light"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square light"></div>
+        <div class="square"></div>
+        <div class="square light"></div>
+        <div class="square light"></div>
+        <div class="square"></div>
+        <div class="square light"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square light"></div>
+        <div class="square"></div>
+        <div class="square light"></div>
+    </main>
+</body>
+<script>
+    const squares = document.querySelectorAll('.square');
+    squares.forEach(square => {
+        square.addEventListener('click', () => {
+            square.style.filter = 'invert(1)';
+        })
+    })
+</script>
+</html>

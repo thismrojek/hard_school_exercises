@@ -1,0 +1,19 @@
+body {
+  margin: 0 auto;
+}
+
+main {
+  width: 60vw;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+main .square {
+  min-width: 15vw;
+  min-height: 15vw;
+  background: #936f2b;
+}
+
+main .square.light {
+  background: #dfb669;
+}
