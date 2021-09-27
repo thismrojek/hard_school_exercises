@@ -12,11 +12,13 @@ int main(int argc, char** argv) {
 		}
 	}
 	
-	cout << "Teraz wypiszemy wszystkie elementy z tablicy..." << endl;
+	cout << "Teraz wypiszemy wszystkie elementy z podtablic o parzystych indeksach..." << endl;
 	
 	for (int i = 0; i < 3; i++) {
-		for (int j = 0; j < 2; j++) {
-			cout << array[i][j] << endl;
+		if (i % 2 == 0) {
+			for (int j = 0; j < 2; j++) {
+				cout << array[i][j] << endl;
+			}
 		}
 	}
 	
