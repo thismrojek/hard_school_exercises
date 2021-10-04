@@ -42,6 +42,20 @@ int main(int argc, char** argv) {
 
     cout << "Auto z najwiekszym przebiegiem: " << (carWithMaxMileage + 1) << endl;
     cout << "Auto z najmniejszym przebiegiem: " << (carWithMinMileage + 1) << endl;
+
+    for (int car = 0; car < 3; car++) {
+        cout << "Laczny przebieg auta nr: " << (car + 1) << " wynosi: " << sumaricCarsMileage[car] << ", a sredni przebieg miesieczny: " << (sumaricCarsMileage[car] / 4) << endl;
+    }
+
+    for (int car = 0; car < 3; car++) {
+        if (carsMileage[car][0] % 2 == 0 && 
+            carsMileage[car][1] % 2 == 0 &&
+            carsMileage[car][2] % 2 == 0 &&
+            carsMileage[car][3] % 2 == 0
+        ) {
+            cout << "Samochod nr: " << (car + 1) << "posiada wszystkie wartosci przebiegu jako liczbe patrzysta." << endl;
+        }
+    }
 	
 	return 0;
 }
