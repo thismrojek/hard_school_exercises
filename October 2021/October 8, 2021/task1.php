@@ -2,6 +2,9 @@
     // Definuję tablicę
     $myVeryFirstArray = [2, 1, 3, 7, 0];
 
+    // Sortuję tablicę (opcjonalnie)
+    sort($myVeryFirstArray);
+
     // Sprawdzam, czy z formularza "przyszła jakakolwiek wartość - metoda isset()
     if (isset($_POST['value'])) {
         $topValue = max($myVeryFirstArray);
