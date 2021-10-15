@@ -8,7 +8,12 @@
         $digits = str_split($number);
         $digitsString = implode(', ', $digits);
         $numberLength = strlen($number);
-        echo "Liczba $number składa się z $numberLength cyfr, są to: $digitsString.";
+        echo "Liczba $number składa się z $numberLength cyfr, są to: $digitsString. <br>";
+    }
+
+    if ($digit && $digits) {
+        $digitCount = array_count_values($digits)[$digit];
+        echo "Liczba $digit znajduje się w liczbie $number i wystepuje $digitCount raz(y). <br>";
     }
 
 ?>
