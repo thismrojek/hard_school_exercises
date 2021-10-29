@@ -104,14 +104,16 @@
             </form>
         </section>
         <section class="searchMatch">
-            <div class="inputGroup">
-                <label for="gole">Wszystkie mecze, gdy liczba bramek:</label>
-                <input id="gole" name="gole" type="text">
-                <div class="twoSubmits">
-                    <input type="submit" value="Mniej">
-                    <input type="submit" value="Więcej">
+            <form action="">
+                <div class="inputGroup">
+                    <label for="gole">Wszystkie mecze, gdy liczba bramek:</label>
+                    <input id="gole" name="gole" type="text">
+                    <div class="twoSubmits">
+                        <input name="mniej" type="submit" value="Mniej">
+                        <input name="wiecej" type="submit" value="Więcej">
+                    </div>
                 </div>
-            </div>
+            </form>
             <form>
                 <div class="inputGroup">
                     <label for="klub">Nazwa klubu nr 1 lub 2:</label>
@@ -148,6 +150,25 @@
         if ($con->query($sql)) {
             echo "Mecz został dodany pomyślnie! <br>";
         }
+    }
+
+    if (isset($_GET['gole'])) {
+        $gole = $_GET['gole'];
+
+        if (isset($_GET['mniej'])) {
+            $sql = "SELECT * FROM kluby_pilkarskie WHERE gole1 < '$gole' AND gole2 < '$gole'";
+        } else if (isset($_GET['wiecej'])) {
+            $sql = "SELECT * FROM kluby_pilkarskie WHERE gole1 > '$gole' AND gole2 > '$gole'";
+        }  
+
+        $result = mysqli_query($con, $sql);
+        while ($row = mysqli_fetch_array($result)) {
+            $klub1 = $row['klub1'];
+            $klub2 = $row['klub2'];
+            $matchResult = $row['wynik'];
+            $data = $row['data'];
+            echo "Mecz zespołów <b>$klub1</b> oraz <b>$klub2</b> z dnia <b>$data</b> zakończył się wynikiem <b>$matchResult</b> <br>";
+        } 
     }
 
     if (isset($_GET['klub'])) {
