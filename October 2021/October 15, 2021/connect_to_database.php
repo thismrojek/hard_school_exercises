@@ -14,7 +14,7 @@ $sql = "SELECT * FROM table_name";
 $result = mysqli_query($con, $sql);
 
 // WYŚWIETLANIE WIERSZY ZA POMOCĄ PĘTLI
-while ($row = mysql_fetch_array($result)) {
+while ($row = mysqli_fetch_array($result)) {
     echo $row['column1'];
     echo $row['column2'];
     echo ', ';
