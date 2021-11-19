@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order your pizza</title>
+    <style>
+        * {
+            font-family: Arial;
+        }
+
+        header {
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        .customizePizza .yourPizza {
+            display: flex;
+            justify-content: center;
+        }
+        .customizePizza .yourPizza .pick,
+        .customizePizza .yourPizza .list {
+            padding: 2rem;
+        }
+
+        .placeOrder {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .placeOrder button {
+            width: 200px;
+            text-align: center;
+            background: cornflowerblue;
+            outline: none;
+            border: none;
+            border-radius: 8px;
+            padding: .5rem;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>  
+    <header>
+        <h1>Zamów pizzę</h1>
+    </header>
+    <section class="customizePizza">
+        <section class="yourPizza">
+            <div class="pick">
+                <h2>Wybierz składniki</h2>
+                <div class="inputGroup">
+                    <input type="checkbox" name="" id="pieczarki">
+                    <label for="pieczarki">Pieczarki</label>
+                </div>
+                <div class="inputGroup">
+                    <input type="checkbox" name="" id="szynka">
+                    <label for="szynka">Szynka</label>
+                </div>
+                <div class="inputGroup">
+                    <input type="checkbox" name="" id="pomidory">
+                    <label for="pomidory">Pomidory</label>
+                </div>
+                <div class="inputGroup">
+                    <input type="checkbox" name="" id="oliwki">
+                    <label for="oliwki">Oliwki</label>
+                </div>
+            </div>
+            <div class="list">
+                <h2>Wybrane składniki:</h2>
+                <div class="dynamic">
+
+                </div>
+            </div>
+        </section>
+        <section class="placeOrder">
+            <button>Złóż zamówienie</button>
+        </section>
+    </section>
+    <script>
+        const checkboxes = document.querySelectorAll('input[type=checkbox]');
+        const dynamicContainer = document.querySelector('.dynamic');
+        const placeOrderButton = document.querySelector('.placeOrder button');
+        let productsList = '';
+
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', () => {
+                productsList = '';
+                checkboxes.forEach(checkbox => {
+                    if (checkbox.checked) productsList += `${checkbox.id}, `;
+                });
+                dynamicContainer.textContent = productsList;
+            })
+        })
+
+        placeOrderButton.addEventListener('click', () => {
+            alert(`Twoja pizza złożona z: ${productsList} została zamówiona.`)
+        })
+    </script>
+</body> 
+</html>
