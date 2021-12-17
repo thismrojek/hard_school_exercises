@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui;
+}
+
+main {
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+main,
+.register form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+main h1,
+main h2 {
+    color: gray;
+}
+
+main h2 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.register form input {
+    padding: .2rem;
+    font-size: 1.25rem;
+    outline: none;
+    border: 1px solid gray;
+    border-radius: 2px;
+    margin: .3rem 0;
+}
+
+.register form input[type=submit] {
+    background: white;
+    font-size: .75rem;
+    cursor: pointer;
+    margin-right: auto;
+}
